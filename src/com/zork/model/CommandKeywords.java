@@ -31,5 +31,13 @@ public class CommandKeywords {
 			return false;
 		}
 	}
+	
+	public static void showValidCommand() {
+		System.out.println("GO [NORTH]|[SOUTH]|[WEST]|[EAST]");
+		System.out.println("USE [Item]");
+		System.out.println("ATTACK");
+		System.out.println("GRAP [Item]");
+		System.out.println("HELP");
+	}
 }
 

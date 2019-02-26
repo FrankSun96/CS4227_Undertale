@@ -13,7 +13,7 @@ public class ZorkUtil {
 	public static final String ANSI_WHITE = "\u001B[37m";
 	
 	public static void welcome() {
-		System.out.println(ANSI_BLUE + "\n" + 
+		System.out.println("\n" + 
 				"▒███████▒ ▒█████   ██▀███   ██ ▄█▀\n" + 
 				"▒ ▒ ▒ ▄▀░▒██▒  ██▒▓██ ▒ ██▒ ██▄█▒ \n" + 
 				"░ ▒ ▄▀▒░ ▒██░  ██▒▓██ ░▄█ ▒▓███▄░ \n" + 
@@ -24,7 +24,7 @@ public class ZorkUtil {
 				"░ ░ ░ ░ ░░ ░ ░ ▒    ░░   ░ ░ ░░ ░ \n" + 
 				"  ░ ░        ░ ░     ░     ░  ░   \n" + 
 				"░                                 \n" + 
-				"" + ANSI_RESET);
+				"" );
 	}
 	
 }
