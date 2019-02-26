@@ -1,6 +1,6 @@
-package com.zork.interpreter;
+package com.undertale.interpreter;
 
-import com.zork.model.CommandKeywords;
+import com.undertale.model.CommandKeywords;
 
 public class OperatorUtil {
 	private CommandKeywords com;

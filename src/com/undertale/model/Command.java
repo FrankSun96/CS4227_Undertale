@@ -1,4 +1,4 @@
-package com.zork.model;
+package com.undertale.model;
 
 public class Command {
 	private String firstCommand;

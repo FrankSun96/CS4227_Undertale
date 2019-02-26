@@ -1,7 +1,7 @@
-package com.zork.fecade;
+package com.undertale.fecade;
 
-import com.zork.model.Command;
-import com.zork.model.CommandKeywords;
+import com.undertale.model.Command;
+import com.undertale.model.CommandKeywords;
 
 public class HelpExecution implements Fecade{
 	@Override

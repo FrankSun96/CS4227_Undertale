@@ -1,6 +1,6 @@
-package com.zork.interpreter;
+package com.undertale.interpreter;
 
-import com.zork.model.Command;
+import com.undertale.model.Command;
 
 public class SingleActionInterpreter implements Interpreter {
 	private String firstWord;

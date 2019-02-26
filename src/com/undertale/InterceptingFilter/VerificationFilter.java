@@ -1,6 +1,6 @@
-package com.zork.InterceptingFilter;
+package com.undertale.InterceptingFilter;
 
-import com.zork.model.Command;
+import com.undertale.model.Command;
 
 public class VerificationFilter implements Filter {
 

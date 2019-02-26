@@ -1,15 +1,16 @@
-package com.zork.interpreter;
+package com.undertale.interpreter;
 
 import java.util.Scanner;
 import java.util.Stack;
-import com.zork.interpreter.OperatorUtil;
-import com.zork.model.Command;
-public class ZorkExpressionParser {
+
+import com.undertale.interpreter.OperatorUtil;
+import com.undertale.model.Command;
+public class ExpressionParser {
 	private Stack<Interpreter> stack;
 	private Scanner sc;
 	private OperatorUtil util;
 	
-	public ZorkExpressionParser() {
+	public ExpressionParser() {
 		sc = new Scanner( System.in );	
 		util = new OperatorUtil();
 		stack = new Stack<Interpreter>();

@@ -1,6 +1,6 @@
-package com.zork.fecade;
+package com.undertale.fecade;
 
-import com.zork.model.Command;
+import com.undertale.model.Command;
 
 public class CommandExecution {
 	private HelpExecution help;

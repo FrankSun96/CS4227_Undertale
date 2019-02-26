@@ -1,4 +1,4 @@
-package com.zork.model;
+package com.undertale.model;
 
 import java.util.HashMap;
 import java.util.Map;

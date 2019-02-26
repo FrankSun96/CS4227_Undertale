@@ -1,22 +1,22 @@
-package com.zork;
+package com.undertale;
 
 import java.util.Scanner;
 
-import com.zork.InterceptingFilter.VerificationFilter;
-import com.zork.fecade.CommandExecution;
-import com.zork.interpreter.ZorkExpressionParser;
-import com.zork.model.Command;
+import com.undertale.InterceptingFilter.VerificationFilter;
+import com.undertale.fecade.CommandExecution;
+import com.undertale.interpreter.ExpressionParser;
+import com.undertale.model.Command;
 
-public class Zork {
+public class Undertale {
 	public static void main(String args[]) {
 		
 		boolean finish = false;
 		
-		ZorkExpressionParser expression = new ZorkExpressionParser();
+		ExpressionParser expression = new ExpressionParser();
 		VerificationFilter verification = new VerificationFilter();
 		CommandExecution execution = new CommandExecution();
 		
-		ZorkUtil.welcome();
+		UndertaleUtil.welcome();
 		
 		while(!finish) {
 			Command command = expression.parse();
