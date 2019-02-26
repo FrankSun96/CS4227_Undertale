@@ -1,4 +1,4 @@
-# CS4227_Peoject_Java
+# CS4227_Undertale
 
 ## Git Workflow
 
