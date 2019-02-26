@@ -17,6 +17,7 @@ public class Undertale {
 		CommandExecution execution = new CommandExecution();
 		
 		UndertaleUtil.welcome();
+		UndertaleUtil.initalMap();
 		
 		while(!finish) {
 			Command command = expression.parse();
