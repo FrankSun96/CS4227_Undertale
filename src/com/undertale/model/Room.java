@@ -22,16 +22,16 @@ public class Room {
 	
 	public void setExits(Room north, Room south, Room west, Room east) {
 		if(north != null) {
-			exits.put("north", north);
+			exits.put("NORTH", north);
 		}
 		if(south != null) {
-			exits.put("north", south);
+			exits.put("SOUTH", south);
 		}
 		if(west != null) {
-			exits.put("north", west);
+			exits.put("WEST", west);
 		}
 		if(east != null) {
-			exits.put("north", east);
+			exits.put("EAST", east);
 		}
 	}
 	
@@ -39,12 +39,23 @@ public class Room {
 		return this.description;
 	}
 	
+	public boolean hasRoom(String direction) {
+		Room next = exits.get(direction);
+		if(next != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public Room nextRoom(String direction) {
 		Room next = exits.get(direction);
 		if(next != null) {
-			return (Room) exits.values();
+			return next;
 		} else {
 			return null;
 		}
 	}
+	
+	
 }

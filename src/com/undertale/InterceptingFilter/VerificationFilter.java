@@ -1,18 +1,29 @@
 package com.undertale.InterceptingFilter;
 
 import com.undertale.model.Command;
+import com.undertale.model.UndertaleMap;
 
 public class VerificationFilter implements Filter {
+	private UndertaleMap map;
+	
+	public VerificationFilter() {
+		map = new UndertaleMap();
+	}
 
 	@Override
 	public boolean excecute(Command command) {
 		String firstword = command.getfirstWord();
 		if(firstword.equals("HELP")) {
-			System.out.println("you wanna help? ");
 			return true;
 		} else if(firstword.equals("GO")) {
-			System.out.println("where do you wanna go? ");
-			return false;
+			String direction = command.getSecondWord();
+			boolean room = map.hasRoom(direction);
+			if(room) {
+				return true;
+			} else {
+				System.out.println("Oops, there is a wall in front of me. Maybe I should try another side\n");
+				return false;
+			}
 		} else if(firstword.equals("USE")) {
 			System.out.println("what do you wanna use?");
 			return false;

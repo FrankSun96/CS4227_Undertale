@@ -12,12 +12,13 @@ public class Undertale {
 		
 		boolean finish = false;
 		
+		UndertaleUtil util = new UndertaleUtil();
 		ExpressionParser expression = new ExpressionParser();
 		VerificationFilter verification = new VerificationFilter();
 		CommandExecution execution = new CommandExecution();
 		
-		UndertaleUtil.welcome();
-		UndertaleUtil.initalMap();
+		util.welcome();
+		util.initalMap();
 		
 		while(!finish) {
 			Command command = expression.parse();

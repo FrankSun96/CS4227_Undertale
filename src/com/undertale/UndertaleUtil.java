@@ -4,8 +4,8 @@ import com.undertale.model.Room;
 import com.undertale.model.UndertaleMap;
 
 public class UndertaleUtil {
-	private static UndertaleMap map;
-	public static void welcome() {
+	private UndertaleMap map;
+	public void welcome() {
 		System.out.println("\n" + 
 				" █    ██  ███▄    █ ▓█████▄ ▓█████  ██▀███  ▄▄▄█████▓ ▄▄▄       ██▓    ▓█████ \n" + 
 				" ██  ▓██▒ ██ ▀█   █ ▒██▀ ██▌▓█   ▀ ▓██ ▒ ██▒▓  ██▒ ▓▒▒████▄    ▓██▒    ▓█   ▀ \n" + 
@@ -20,8 +20,10 @@ public class UndertaleUtil {
 				"");
 	}
 	
-	public static void initalMap() {
+	public void initalMap() {
 		map = new UndertaleMap();
 		map.initialMap();
+		Room room = map.getCurrentRoom();
+		System.out.println("\n"+room.getDescription());
 	}
 }
