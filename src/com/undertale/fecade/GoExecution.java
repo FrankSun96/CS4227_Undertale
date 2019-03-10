@@ -17,8 +17,9 @@ public class GoExecution implements Fecade {
 		Room nextRoom = currentRoom.nextRoom(direction);
 		map.setCurrentRoom(nextRoom);
 		
-		Room currentRoomNow = map.getCurrentRoom();
-		System.out.println("\n"+currentRoomNow.getDescription());
+		Room roomNow = map.getCurrentRoom();
+		System.out.println("\n" + map.getCharactor().showDetailedDescription()
+				+ "\n"+roomNow.showDetailedDescription());
 	}
 
 }

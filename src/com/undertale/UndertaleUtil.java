@@ -24,6 +24,6 @@ public class UndertaleUtil {
 		map = new UndertaleMap();
 		map.initialMap();
 		Room room = map.getCurrentRoom();
-		System.out.println("\n"+room.getDescription());
+		System.out.println("\n"+room.showDetailedDescription());
 	}
 }

@@ -14,6 +14,7 @@ public class CommandKeywords {
 		validCommands.put("USE", 2);
 		validCommands.put("ATTACK", 1);
 		validCommands.put("GRAP", 2);
+		validCommands.put("CHECK", 1);
 	}
 	
 	public boolean isCommand(String command) {
