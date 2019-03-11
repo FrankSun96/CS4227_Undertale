@@ -11,7 +11,7 @@ public class GoExecution implements Fecade {
 		map = new UndertaleMap();
 	}
 	@Override
-	public void excute(Command command) {
+	public void excute(Command command, UndertaleMap map) {
 		String direction = command.getSecondWord();
 		Room currentRoom = map.getCurrentRoom();
 		Room nextRoom = currentRoom.nextRoom(direction);

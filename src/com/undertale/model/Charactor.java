@@ -1,6 +1,10 @@
 package com.undertale.model;
 
-public class Charactor {
+import java.io.Serializable;
+
+public class Charactor implements Serializable{
+	
+	private static final long serialVersionUID = -831573866198241188L;
 	private String name;
 	private float HP;
 	private float arm;

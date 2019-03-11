@@ -6,14 +6,12 @@ import java.util.Stack;
 import com.undertale.interpreter.OperatorUtil;
 import com.undertale.model.Command;
 public class ExpressionParser {
-	private Stack<Interpreter> stack;
 	private Scanner sc;
 	private OperatorUtil util;
 	
-	public ExpressionParser() {
+	public ExpressionParser(boolean game) {
 		sc = new Scanner( System.in );	
-		util = new OperatorUtil();
-		stack = new Stack<Interpreter>();
+		util = new OperatorUtil(game);
 	}
 	
 	public Command parse() {	

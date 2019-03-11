@@ -1,6 +1,10 @@
 package com.undertale.model;
 
-public abstract class Item {
+import java.io.Serializable;
+
+public abstract class Item implements Serializable{
+
+	private static final long serialVersionUID = -998998950672033079L;
 	private int id;
 	private String name;
 	private String description;

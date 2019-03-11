@@ -5,8 +5,8 @@ import com.undertale.model.CommandKeywords;
 public class OperatorUtil {
 	private CommandKeywords com;
 	
-	public OperatorUtil() {
-		com = new CommandKeywords();
+	public OperatorUtil(boolean game) {
+		com = new CommandKeywords(game);
 	}
 	public boolean isOperator(String symbol) {
 		return (com.isCommand(symbol));

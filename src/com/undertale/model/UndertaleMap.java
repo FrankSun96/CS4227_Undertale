@@ -1,10 +1,24 @@
 package com.undertale.model;
-import com.undertale.model.Item;
+import java.io.Serializable;
 
-public class UndertaleMap {
-	private static Charactor charactor;
-	private static Room currentRoom;
-	private static Room a, b, c;
+import com.undertale.model.Item;
+import com.undertale.model.factory.*;
+
+public class UndertaleMap implements Serializable{
+	
+	private static final long serialVersionUID = 7892133818163125709L;
+	private Charactor charactor;
+	private Room currentRoom;
+	private Room a, b, c;
+	private int id;
+	private RoomFactory normalFactory;
+	private RoomFactory bossFactory;
+	
+	public UndertaleMap() {
+		normalFactory = new NormalRoom();
+		bossFactory = new BossRoom();
+		id = 0;
+	}
 	
 	public void initialMap() {
 		charactor = new Charactor("王大锤", 20, 10, 5);
@@ -18,21 +32,21 @@ public class UndertaleMap {
 		b.setExits(null, a, c, null);
 		
 		// initialize items in each room
-		Item i = new RedPotion(0, "a red potion", "this red potion can add hp", 5);
-		Item i2 = new Arm(1, "an arm", "this arm can add arm", 5);
-		Item i3 = new Armor(3, "an armor", "this armor can add armor", 5);
+		Item i = createItem("redpotion", "a red potion", "this red potion can add hp", 5);			
+		Item i2 = createItem("arm", "an arm", "this arm can add arm", 5);
+		Item i3 = createBossRoomItem("armor", "an armor", "this armor can add armor", 5);
 		
-		a.putItem(i);
-		b.putItem(i2);
-		b.putItem(i3);
+		setRoomItem(a, i);
+		setRoomItem(b, i2);
+		setRoomItem(c, i3);
 		
 		// initialize creatures in each room
-		Creature c1 = new Creep(0, "a meow", "kill people", 10, 5, 5);
-		Creature c2 = new Boss(1, "a boss", "kill people", 20, 3, 4);
-		b.putCreature(c1);
-		c.putCreature(c2);
+		Creature c1 = createCreature("a meow", "kill people", 10, 5, 5);
+		Creature c2 = createBoss("a boss", "kill people", 20, 3, 4);
+		setRoomCreature(b, c1);
+		setRoomCreature(c, c2);
 		
-		this.currentRoom = a;
+		setCurrentRoom(a);
 	}
 	
 	public void setCurrentRoom(Room room) {
@@ -54,5 +68,53 @@ public class UndertaleMap {
 		} else {
 			return true;
 		}
+	}
+	
+	public String showCurrentRoomDetails() {
+		return currentRoom.showDetailedDescription();
+	}
+	
+	public void setRoomItem(Room room, Item item) {
+		room.putItem(item);
+	}
+	
+	public void setRoomCreature(Room room, Creature creature) {
+		room.putCreature(creature);
+	}
+	
+	public Item createBossRoomItem(String item, String name, String description, float effect) {
+		id++;
+		if(item.equals("arm")) {
+			return bossFactory.createArm(id, name, description, effect);
+		} else if (item.equals("armor")) {
+			return bossFactory.createArmor(id, name, description, effect);
+		} else if(item.equals("redpotion")) {
+			return bossFactory.createRedPotion(id, name, description, effect);
+		} else {
+			return null;
+		}
+	}
+	
+	public Creature createBoss(String name, String description, float HP, float arm, float armor) {
+		id++;
+		return bossFactory.createCreature(id, name, description, HP, arm, armor);
+	}
+	
+	public Item createItem(String item, String name, String description, float effect) {
+		id++;
+		if(item.equals("arm")) {
+			return normalFactory.createArm(id, name, description, effect);
+		} else if (item.equals("armor")) {
+			return normalFactory.createArmor(id, name, description, effect);
+		} else if(item.equals("redpotion")) {
+			return normalFactory.createRedPotion(id, name, description, effect);
+		} else {
+			return null;
+		}
+	}
+	
+	public Creature createCreature(String name, String description, float HP, float arm, float armor) {
+		id++;
+		return normalFactory.createCreature(id, name, description, HP, arm, armor);
 	}
 }

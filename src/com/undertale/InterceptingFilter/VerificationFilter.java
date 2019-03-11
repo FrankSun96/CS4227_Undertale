@@ -11,7 +11,7 @@ public class VerificationFilter implements Filter {
 	}
 
 	@Override
-	public boolean excecute(Command command) {
+	public boolean excecute(Command command, UndertaleMap map) {
 		String firstword = command.getfirstWord();
 		if(firstword.equals("HELP")) {
 			return true;
@@ -36,6 +36,12 @@ public class VerificationFilter implements Filter {
 		} else if(firstword.equals("CHECK")) {
 			System.out.println("here is your inventory:");
 			return false;
+		} else if(firstword.equals("READ")) {
+			return true;
+		} else if(firstword.equals("NEW")) {
+			return true;
+		} else if(firstword.equals("SAVE")) {
+			return true;
 		}
 		return false;
 	}

@@ -1,11 +1,14 @@
 package com.undertale.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import com.undertale.model.Item;
 
-public class Room {
+public class Room implements Serializable{
+
+	private static final long serialVersionUID = -4916722174082874247L;
 	private String name;
 	private String description;
 	private Map<String, Room> exits;

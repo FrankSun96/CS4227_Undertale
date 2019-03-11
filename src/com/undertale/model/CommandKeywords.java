@@ -6,15 +6,22 @@ import java.util.Map;
 public class CommandKeywords {
 	Map<String, Integer> validCommands;
 	
-	public CommandKeywords() {
+	public CommandKeywords(boolean game) {
 		validCommands = new HashMap<String, Integer>();
 		
-		validCommands.put("GO", 2);
-		validCommands.put("HELP", 1);
-		validCommands.put("USE", 2);
-		validCommands.put("ATTACK", 1);
-		validCommands.put("GRAP", 2);
-		validCommands.put("CHECK", 1);
+		if(game) {
+			validCommands.put("GO", 2);
+			validCommands.put("HELP", 1);
+			validCommands.put("USE", 2);
+			validCommands.put("ATTACK", 1);
+			validCommands.put("GRAP", 2);
+			validCommands.put("CHECK", 1);
+			validCommands.put("SAVE", 1);
+		} else {	
+			validCommands.put("READ", 1);
+			validCommands.put("NEW", 1);
+		}
+		
 	}
 	
 	public boolean isCommand(String command) {
@@ -39,6 +46,8 @@ public class CommandKeywords {
 		System.out.println("ATTACK");
 		System.out.println("GRAP [Item]");
 		System.out.println("HELP");
+		System.out.println("CHECK");
+		System.out.println("SAVE");
 	}
 }
 
