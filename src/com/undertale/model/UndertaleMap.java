@@ -21,7 +21,7 @@ public class UndertaleMap implements Serializable{
 	}
 	
 	public void initialMap() {
-		charactor = new Charactor("王大锤", 20, 10, 5);
+		charactor = new Charactor("Alex", 20, 0, 0, 10, 5);
 		
 		a = new Room("a", "this is room a");
 		b = new Room("b", "this is room b");

@@ -9,14 +9,42 @@ public class Charactor implements Serializable{
 	private float HP;
 	private float arm;
 	private float armor;
+	private float attack;
+	private float defense;
 	private Inventory myInventory;
 	
-	public Charactor(String name, float hP, float arm, float armor) {
+	public Charactor(String name, float hP, float arm, float armor, float attack, float defense) {
 		this.name = name;
 		HP = hP;
 		this.arm = arm;
 		this.armor = armor;
+		this.attack = attack;
+		this.defense = defense;
 		this.myInventory = new Inventory();
+	}
+
+	public float getDefense() {
+		return defense;
+	}
+
+	public void setDefense(float defense) {
+		this.defense = defense;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public float getAttack() {
+		return attack;
+	}
+
+	public void setAttack(float attack) {
+		this.attack = attack;
 	}
 
 	public float getHP() {
@@ -52,9 +80,6 @@ public class Charactor implements Serializable{
 	}
 	
 	public String showDetailedDescription() {
-		String details = "我叫：" + this.name;
-		details += "\n我还有" + this.HP + "血";
-		details += "\n Arm:" + this.arm + "\tArmor: " + this.armor + "\n";
-		return details;
+		return "";
 	}
 }

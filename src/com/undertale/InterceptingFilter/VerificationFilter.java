@@ -34,8 +34,7 @@ public class VerificationFilter implements Filter {
 			System.out.println("what do you wanna grap?");
 			return false;
 		} else if(firstword.equals("CHECK")) {
-			System.out.println("here is your inventory:");
-			return false;
+			return true;
 		} else if(firstword.equals("READ")) {
 			return true;
 		} else if(firstword.equals("NEW")) {
