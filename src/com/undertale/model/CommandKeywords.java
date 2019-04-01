@@ -49,5 +49,9 @@ public class CommandKeywords {
 		System.out.println("CHECK");
 		System.out.println("SAVE");
 	}
+	
+	public Map<String, Integer> getValidCommand() {
+		return validCommands;
+	}
 }
 

@@ -1,5 +1,6 @@
 package com.undertale.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import com.undertale.model.Item;
 import com.undertale.model.factory.*;
@@ -117,4 +118,5 @@ public class UndertaleMap implements Serializable{
 		id++;
 		return normalFactory.createCreature(id, name, description, HP, arm, armor);
 	}
+	
 }

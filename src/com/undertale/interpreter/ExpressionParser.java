@@ -8,10 +8,12 @@ import com.undertale.model.Command;
 public class ExpressionParser {
 	private Scanner sc;
 	private OperatorUtil util;
+	private CommandHelper help;
 	
 	public ExpressionParser(boolean game) {
 		sc = new Scanner( System.in );	
 		util = new OperatorUtil(game);
+		help = new CommandHelper(game);
 	}
 	
 	public Command parse() {	
@@ -22,7 +24,9 @@ public class ExpressionParser {
 		}
 		String[] commands = str.split(" ");
 		if(!util.isOperator(commands[0])) {
-			System.out.println("Invalid command");
+			String helpWord = help.similarWord(commands[0]);
+			System.out.println("(?) Do you mean " + helpWord);
+			return null;
 		} else {
 			if(util.hasSecondWord(commands[0])) {
 				String firstWord = commands[0];
