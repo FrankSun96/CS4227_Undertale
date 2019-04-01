@@ -17,7 +17,12 @@ public class Inventory implements Serializable{
 		inventory.add(item);
 	}
 	
-	public ArrayList<Item> getItems(){
+
+	public ArrayList<Item> getItems() {
 		return inventory;
 	}
+
+	public void deleteItem(Item item) {
+		int index = inventory.indexOf(item);
+		inventory.remove(index);
 }
