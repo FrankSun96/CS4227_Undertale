@@ -13,7 +13,7 @@ public class Inventory implements Serializable{
 		this.inventory = new ArrayList<Item>();
 	}
 	
-	public void addItem(Item item) {
+		public void addItem(Item item) {
 		inventory.add(item);
 	}
 	

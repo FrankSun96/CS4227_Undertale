@@ -14,7 +14,7 @@ public class CommandKeywords {
 			validCommands.put("HELP", 1);
 			validCommands.put("USE", 2);
 			validCommands.put("ATTACK", 1);
-			validCommands.put("GRAP", 2);
+			validCommands.put("GRAB", 2);
 			validCommands.put("CHECK", 1);
 			validCommands.put("SAVE", 1);
 		} else {	
@@ -44,7 +44,7 @@ public class CommandKeywords {
 		System.out.println("GO [NORTH]|[SOUTH]|[WEST]|[EAST]");
 		System.out.println("USE [Item]");
 		System.out.println("ATTACK");
-		System.out.println("GRAP [Item]");
+		System.out.println("GRAB [Item]");
 		System.out.println("HELP");
 		System.out.println("CHECK");
 		System.out.println("SAVE");
