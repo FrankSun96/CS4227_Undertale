@@ -37,8 +37,9 @@ public class CommandExecution {
 			save.excute(command, map);
 		} else if(firstword.equals("CHECK")) {
 			check.excute(command, map);
-		} else if(firstword.equals("Take")) {
-			check.excute(command, map);
+		} else if(firstword.equals("TAKE")) {
+			take.excute(command, map);
+			System.out.println("execute");
 		}
 
 	}
