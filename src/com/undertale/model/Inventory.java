@@ -7,9 +7,20 @@ import com.undertale.model.Item;
 public class Inventory implements Serializable{
 
 	private static final long serialVersionUID = -2719571101775439535L;
-	private ArrayList<ArrayList<ArrayList<Item>>> inventory = new ArrayList<ArrayList<ArrayList<Item>>>();
+	private ArrayList<Item> inventory = new ArrayList<Item>();
 	
 	public Inventory() {
-		this.inventory = new ArrayList<ArrayList<ArrayList<Item>>>();
+		this.inventory = new ArrayList<Item>();
+	}
+	
+	public ArrayList<Item> getItems() {
+		return inventory;
+	}
+	public void addItem(Item item) {
+		inventory.add(item);
+	}
+	public void deleteItem(Item item) {
+		int index = inventory.indexOf(item);
+		inventory.remove(index);
 	}
 }
