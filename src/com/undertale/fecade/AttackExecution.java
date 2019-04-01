@@ -28,7 +28,6 @@ public class AttackExecution implements Fecade {
 		float creatureHP = 0;
 		float creatureArmor = 0;
 		float creatureArm = 0;*/
-		
 		boolean attackResult = false;
 		Charactor ch = map.getCharactor();
 		ArrayList<Creature>  creatureList = map.getCurrentRoom().getCreature();
