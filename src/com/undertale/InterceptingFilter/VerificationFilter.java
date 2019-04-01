@@ -27,9 +27,13 @@ public class VerificationFilter implements Filter {
 		} else if(firstword.equals("USE")) {
 			System.out.println("what do you wanna use?");
 			return false;
-		} else if(firstword.equals("ATTACT")) {
-			System.out.println("who do you wanna attact?");
-			return false;
+		} else if(firstword.equals("ATTACK")) {
+			
+			
+			
+			//这里需要检查是否有可攻击的怪物，如果没有 false， 有的话返回true
+			System.out.println("who do you wanna attack?");
+			return true;
 		} else if(firstword.equals("GRAP")) {
 			System.out.println("what do you wanna grap?");
 			return false;

@@ -10,6 +10,9 @@ public class CommandExecution {
 	private SaveExecution save;
 	private NewExecution newGame;
 	private CheckExecution check;
+	private TakeExecution take;
+	private AttackExecution attack;
+
 	
 	
 	public CommandExecution() {
@@ -19,6 +22,8 @@ public class CommandExecution {
 		save = new SaveExecution();
 		newGame = new NewExecution();
 		check = new CheckExecution();
+		take = new TakeExecution();
+		attack = new AttackExecution();
 	}
 	
 	public void execute(Command command, UndertaleMap map) {
@@ -35,6 +40,12 @@ public class CommandExecution {
 			save.excute(command, map);
 		} else if(firstword.equals("CHECK")) {
 			check.excute(command, map);
+		} else if(firstword.equals("TAKE")) {
+			take.excute(command, map);
+		} else if(firstword.equals("ATTACK")) {
+			attack.excute(command, map);
 		}
+
 	}
 }
+

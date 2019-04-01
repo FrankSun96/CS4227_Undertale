@@ -1,5 +1,6 @@
 package com.undertale.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import com.undertale.model.Item;
 import com.undertale.model.factory.*;
@@ -21,7 +22,7 @@ public class UndertaleMap implements Serializable{
 	}
 	
 	public void initialMap() {
-		charactor = new Charactor("Alex", 20, 0, 0, 10, 5);
+		charactor = new Charactor("Alex", 100, 0, 0, 10, 5);
 		
 		a = new Room("a", "this is room a");
 		b = new Room("b", "this is room b");
@@ -41,8 +42,8 @@ public class UndertaleMap implements Serializable{
 		setRoomItem(c, i3);
 		
 		// initialize creatures in each room
-		Creature c1 = createCreature("a meow", "kill people", 10, 5, 5);
-		Creature c2 = createBoss("a boss", "kill people", 20, 3, 4);
+		Creature c1 = createCreature("a meow", "It is a normal creature.", 4, 20, 4);//armor hp arm
+		Creature c2 = createBoss("a boss", "It is a Boss! Be careful.", 8, 40, 8);
 		setRoomCreature(b, c1);
 		setRoomCreature(c, c2);
 		
@@ -117,4 +118,5 @@ public class UndertaleMap implements Serializable{
 		id++;
 		return normalFactory.createCreature(id, name, description, HP, arm, armor);
 	}
+	
 }

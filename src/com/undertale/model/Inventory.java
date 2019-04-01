@@ -13,14 +13,11 @@ public class Inventory implements Serializable{
 		this.inventory = new ArrayList<Item>();
 	}
 	
-	public ArrayList<Item> getItems() {
-		return inventory;
-	}
-	public void addItem(Item item) {
+		public void addItem(Item item) {
 		inventory.add(item);
 	}
-	public void deleteItem(Item item) {
-		int index = inventory.indexOf(item);
-		inventory.remove(index);
+	
+	public ArrayList<Item> getItems(){
+		return inventory;
 	}
 }

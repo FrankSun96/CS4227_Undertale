@@ -127,5 +127,8 @@ public class Room implements Serializable{
 		return creature;
 	}
 	
+	public ArrayList<Creature> getCreature(){
+		return creatureList;
+	}
 
 }
