@@ -33,9 +33,9 @@ public class UndertaleMap implements Serializable{
 		b.setExits(null, a, c, null);
 		
 		// initialize items in each room
-		Item i = createItem("redpotion", "a red potion", "this red potion can add hp", 5);			
-		Item i2 = createItem("arm", "an arm", "this arm can add arm", 5);
-		Item i3 = createBossRoomItem("armor", "an armor", "this armor can add armor", 5);
+		Item i = createItem("redpotion", "a red [potion]", "this red potion can add hp", 5);			
+		Item i2 = createItem("arm", "an [arm]", "this arm can add arm", 5);
+		Item i3 = createBossRoomItem("armor", "an [armor]", "this armor can add armor", 5);
 		
 		setRoomItem(a, i);
 		setRoomItem(b, i2);
@@ -78,6 +78,11 @@ public class UndertaleMap implements Serializable{
 	public void setRoomItem(Room room, Item item) {
 		room.putItem(item);
 	}
+	
+	public ArrayList<Item> getItems(Room room) {
+		return room.getItem();
+	}
+	
 	
 	public void setRoomCreature(Room room, Creature creature) {
 		room.putCreature(creature);
