@@ -35,10 +35,6 @@ public class Room implements Serializable{
 		this.itemList.add(item);
 	}
 	
-	public ArrayList<Item> getItem() {
-		return itemList;
-	}
-	
 	public boolean deleteItem(Item item) {
 		int itemId = item.getId();
 		for(Item it: itemList) {
