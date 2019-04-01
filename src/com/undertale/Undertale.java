@@ -8,6 +8,5 @@ public class Undertale {
 		util.welcome();
 		util.initialMap();
 		util.executeCommand();
-		System.out.println("Here is yiran");
 	}
 }

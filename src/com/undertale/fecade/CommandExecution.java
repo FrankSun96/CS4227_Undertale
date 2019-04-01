@@ -11,6 +11,7 @@ public class CommandExecution {
 	private NewExecution newGame;
 	private CheckExecution check;
 	private TakeExecution take;
+
 	
 	
 	public CommandExecution() {
@@ -39,7 +40,9 @@ public class CommandExecution {
 			check.excute(command, map);
 		} else if(firstword.equals("Take")) {
 			check.excute(command, map);
+
 		}
 
 	}
 }
+
