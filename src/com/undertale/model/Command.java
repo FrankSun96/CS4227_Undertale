@@ -23,7 +23,7 @@ public class Command {
 	
 	public String toString() {
 		if(this.secondCommand != null) {
-			return this.firstCommand + this.secondCommand;
+			return this.firstCommand  + " " + this.secondCommand;
 		} else {
 			return this.firstCommand;
 		}
