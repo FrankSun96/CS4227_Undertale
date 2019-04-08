@@ -22,7 +22,6 @@ public class LoggerHandler extends AfterHandler {
 		String fileName="./src/logger.txt";
         try {
         	FileWriter writer=new FileWriter(fileName,true);
-            SimpleDateFormat format=new SimpleDateFormat();
             writer.write(lines+"\n");
             writer.close();
         } catch (IOException e) {
