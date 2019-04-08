@@ -1,7 +1,15 @@
 package com.undertale;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.undertale.InterceptingFilter.VerificationFilter;
+import com.undertale.aop.AbstractHandler;
+import com.undertale.aop.AfterHandler;
+import com.undertale.aop.ProxyFactory;
+import com.undertale.aop.impl.LoggerHandler;
 import com.undertale.fecade.CommandExecution;
+import com.undertale.fecade.Execution;
 import com.undertale.interpreter.ExpressionParser;
 import com.undertale.model.Command;
 import com.undertale.model.Room;
@@ -13,6 +21,9 @@ public class UndertaleUtil {
 	protected CommandExecution execution;
 	protected static UndertaleMap map;
 	private static boolean isFinish;
+	private AfterHandler logger;
+	private Execution proxy;
+	private List<AbstractHandler> handlers;
 	
 	public UndertaleUtil() {
 		expression = new ExpressionParser(false);
@@ -20,6 +31,11 @@ public class UndertaleUtil {
 		execution = new CommandExecution();
 		map = new UndertaleMap();
 		isFinish = false;
+		
+		handlers = new ArrayList<AbstractHandler>();
+		logger = new LoggerHandler();
+		handlers.add(logger);
+		proxy = (Execution) ProxyFactory.getProxy(execution, handlers);
 	}
 	
 	public void setGameBegin() {
@@ -55,7 +71,7 @@ public class UndertaleUtil {
 			if(command != null) {
 				boolean valid = verification.excecute(command, map);
 				if(valid) {
-					execution.execute(command, map);
+					proxy.execute(command, map);
 				}
 			}
 		}

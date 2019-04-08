@@ -3,7 +3,7 @@ package com.undertale.fecade;
 import com.undertale.model.Command;
 import com.undertale.model.UndertaleMap;
 
-public class CommandExecution {
+public class CommandExecution implements Execution{
 	private HelpExecution help;
 	private GoExecution go;
 	private ReadExecution read;
