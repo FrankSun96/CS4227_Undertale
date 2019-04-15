@@ -10,7 +10,7 @@ public class CommandExecution implements Execution{
 	private SaveExecution save;
 	private NewExecution newGame;
 	private CheckExecution check;
-	private TakeExecution take;
+	private GrabExecution grab;
 	private AttackExecution attack;
 
 	
@@ -22,7 +22,7 @@ public class CommandExecution implements Execution{
 		save = new SaveExecution();
 		newGame = new NewExecution();
 		check = new CheckExecution();
-		take = new TakeExecution();
+		grab = new GrabExecution();
 		attack = new AttackExecution();
 	}
 	
@@ -40,8 +40,8 @@ public class CommandExecution implements Execution{
 			save.excute(command, map);
 		} else if(firstword.equals("CHECK")) {
 			check.excute(command, map);
-		} else if(firstword.equals("TAKE")) {
-			take.excute(command, map);
+		} else if(firstword.equals("GRAB")) {
+			grab.excute(command, map);
 		} else if(firstword.equals("ATTACK")) {
 			attack.excute(command, map);
 		}
