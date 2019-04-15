@@ -40,19 +40,19 @@ public class CheckExecution implements Fecade{
 	
 	public TextTable inventoryOutput(Inventory inventory) {
 
-		ArrayList<Item> inventoryItems = new ArrayList();
+		ArrayList<Item> inventoryItems = new ArrayList<Item>();
 		inventoryItems = inventory.getItems();
-		ArrayList<String> name = new ArrayList();
-		ArrayList<Integer> id = new ArrayList();
-		ArrayList<String> description = new ArrayList();
-		ArrayList<Integer> sum = new ArrayList();
+		ArrayList<String> name = new ArrayList<String>();
+		ArrayList<Integer> id = new ArrayList<Integer>();
+		ArrayList<String> description = new ArrayList<String>();
+		ArrayList<Integer> sum = new ArrayList<Integer>();
 		for(int i = 0; i < inventoryItems.size(); i++) {
 			boolean flag = false;
 			for(int j = 0; j < name.size(); j++) {
 				if(inventoryItems.get(i).getId() == id.get(j)) {
 					flag = true;
-					int num = sum.get(j);
-					sum.set(j, num++);
+					int num = sum.get(j)+1;
+					sum.set(j, num);
 					continue;
 				}
 			}
@@ -67,6 +67,7 @@ public class CheckExecution implements Fecade{
 				sum.add(1);
 				name.add(inventoryItems.get(i).getName());
 				id.add(inventoryItems.get(i).getId());
+
 			}
 		}
 		String[] header = {"name","info","number"};
@@ -75,13 +76,22 @@ public class CheckExecution implements Fecade{
 			return new TextTable(header, rows);
 		}
 		else {
-			String[][] rows = new String[(id.size())-1][3];
-			for(int i = 0;i < (id.size())-1; i++) {
-				rows[i][0] = name.get(i);
-				rows[i][1] = description.get(i);
-				rows[i][2] = String.valueOf(sum.get(i));
+			if(id.size() == 0) {
+				String[][] rows = {
+				        {" ", " ", " "},
+				    };
+				return new TextTable(header, rows);
 			}
-			return new TextTable(header, rows);
+			else {
+				String[][] rows = new String[(id.size())][3];
+				for(int i = 0;i < (id.size()); i++) {
+					rows[i][0] = name.get(i);
+					rows[i][1] = description.get(i);
+					rows[i][2] = String.valueOf(sum.get(i));				
+				}
+				return new TextTable(header, rows);
+			}
+			
 		}
 
 	}
