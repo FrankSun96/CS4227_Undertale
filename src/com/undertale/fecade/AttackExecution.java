@@ -2,6 +2,7 @@ package com.undertale.fecade;
 
 import java.util.ArrayList;
 
+import com.undertale.UndertaleUtil;
 import com.undertale.model.Boss;
 import com.undertale.model.Charactor;
 import com.undertale.model.Command;
@@ -13,7 +14,39 @@ public class AttackExecution implements Fecade {
 
 	@Override
 	public void excute(Command command, UndertaleMap map) {
-		//System.out.print("Helloword");
+		// TODO Auto-generated method stub
+		
+		//boolean attackResult = false;
+		Charactor ch = map.getCharactor();
+		boolean attackResult = UndertaleUtil.getFinish();
+		float hpAfterFight = 0;
+		if(attackResult == false) {
+			ArrayList<Creature>  creatureList = map.getCurrentRoom().getCreature();
+			for(int i = 0; i < creatureList.size(); i++){
+				hpAfterFight = AttackUtil.Attack(creatureList.get(i),ch);
+				if(hpAfterFight <= 0) {
+					attackResult = true;//fail
+					System.out.println("You died.");
+					System.exit(1);
+				}else {
+					System.out.println("congratz, you beat the creature! Now you have HP: " + hpAfterFight+ "\n What you want to do next? \n");
+				}
+			}
+			UndertaleUtil.setFinish(attackResult);
+		}
+		else {
+			System.out.println("You have died, so you cannot attack.");
+			return;
+		}
+	}
+
+}
+
+
+
+
+
+//System.out.print("Helloword");
 		// TODO Auto-generated method stub
 		/*float arm = map.getCharactor().getArm();
 		float hp = map.getCharactor().getHP();
@@ -28,10 +61,10 @@ public class AttackExecution implements Fecade {
 		float creatureHP = 0;
 		float creatureArmor = 0;
 		float creatureArm = 0;*/
-		boolean attackResult = false;
-		Charactor ch = map.getCharactor();
-		ArrayList<Creature>  creatureList = map.getCurrentRoom().getCreature();
-		for(int i = 0; i < creatureList.size(); i++){
+		//boolean attackResult = false;
+		//Charactor ch = map.getCharactor();
+		//ArrayList<Creature>  creatureList = map.getCurrentRoom().getCreature();
+		//for(int i = 0; i < creatureList.size(); i++){
 			/*creatureId = creatureList.get(i).getId();
 			creatureName = creatureList.get(i).getName();
 			creatureDes = creatureList.get(i).getDescription();*/
@@ -45,13 +78,11 @@ public class AttackExecution implements Fecade {
 				//AttackUtil a = new AttackUtil();
 			/*	Thread t = new Thread(a);
 				t.start();*/
-				AttackUtil.Attack(creatureList.get(i),ch);
+				//AttackUtil.Attack(creatureList.get(i),ch);
 				/*Creep c = (Creep)creatureList.get(i);
 				creatureHP = c.getHP();
 				creatureArm = c.getDamage();
 				creatureArmor = c.getArmor();*/
 			//}
-		}
-	}
-
-}
+		//}
+		
