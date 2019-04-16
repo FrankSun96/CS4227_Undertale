@@ -32,6 +32,7 @@ public class AttackThread extends Thread{
 		this.ch_hp = chara.getHP();
 	}
 	
+	@SuppressWarnings("static-access")
 	@Override
 	public void run() {
 		if((ch_armor + ch_defense) > damage) {

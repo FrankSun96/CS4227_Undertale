@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import com.undertale.chainofresponsibility.BossAttackConcreteHandler;
+import com.undertale.chainofresponsibility.CreepAttackConcreteHandler;
+import com.undertale.chainofresponsibility.Handler;
 import com.undertale.model.Boss;
 import com.undertale.model.Charactor;
 import com.undertale.model.Creature;
@@ -14,7 +17,7 @@ public class AttackUtil {
 	static Boss boo;
 	static Creep cre;
 	static Character chara;
-	private static Lock lock = new ReentrantLock();
+	//private static Lock lock = new ReentrantLock();
 	protected static float Attack(Creature cr, Charactor ch) {
 		// TODO Auto-generated method stub
 		float arm = ch.getArm();
@@ -30,8 +33,14 @@ public class AttackUtil {
 		System.out.println("\nAnd you feel you fill with determination ! \n");
 		System.out.println("***************************************\n");
 		
+		Handler creepHandler = new CreepAttackConcreteHandler();
+		Handler bossHandler = new BossAttackConcreteHandler();
 		
+		creepHandler.setSuccessor(bossHandler);
 		
+		creepHandler.handleAttackRequest(ch,cr);
+		
+		/*
 		//boss
 		if(cr instanceof Boss) {
 			System.out.println("The HP is : " + ((Boss)cr).getHP());
@@ -58,11 +67,12 @@ public class AttackUtil {
 				lock.unlock();
 			}
 		}
+		*/
 		result  = ch.getHP();
 		return result;
 	}
 	
-	private static void attackThreadInvokeMethod(Charactor ch, float hp, float damage, float armor) {
+	public static void attackThreadInvokeMethod(Charactor ch, float hp, float damage, float armor) {
 		// TODO Auto-generated method stub
 		Thread attackThread = new AttackThread(ch,hp,damage,armor);
 		attackThread.start();
