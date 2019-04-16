@@ -89,4 +89,7 @@ public class UndertaleUtil {
 		UndertaleUtil.map = map;
 	}
 	
+	public static boolean getFinish() {
+		return isFinish;
+	}
 }

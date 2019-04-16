@@ -8,7 +8,7 @@ import com.undertale.model.factory.*;
 public class UndertaleMap implements Serializable{
 	
 	private static final long serialVersionUID = 7892133818163125709L;
-	private Charactor charactor;
+	private Charactor charactor;// = new Charactor("Alex", 100, 0, 0, 10, 5);
 	private Room currentRoom;
 	private Room a, b, c;
 	private int id;
@@ -118,5 +118,5 @@ public class UndertaleMap implements Serializable{
 		id++;
 		return normalFactory.createCreature(id, name, description, HP, arm, armor);
 	}
-	
+
 }
