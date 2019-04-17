@@ -25,8 +25,8 @@ public class VerificationFilter implements Filter {
 				return false;
 			}
 		} else if(firstword.equals("USE")) {
-			System.out.println("what do you wanna use?");
-			return false;
+			//System.out.println("what do you wanna use?");
+			return true;
 		} else if(firstword.equals("ATTACK")) {
 			
 			
@@ -47,7 +47,7 @@ public class VerificationFilter implements Filter {
 			return true;
 		} else if(firstword.equals("SAVE")) {
 			return true;
-		}
+		} 
 		return false;
 	}
 

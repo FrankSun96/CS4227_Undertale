@@ -29,7 +29,7 @@ public class Inventory implements Serializable{
 	public ArrayList<Item> getItems() {
 		return inventory;
 	}
-
+	
 	public void deleteItem(Item item) {
 		int index = inventory.indexOf(item);
 		inventory.remove(index);

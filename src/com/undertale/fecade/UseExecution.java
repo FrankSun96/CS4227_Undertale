@@ -7,47 +7,29 @@ import com.undertale.model.Inventory;
 import com.undertale.model.Item;
 import com.undertale.model.Room;
 import com.undertale.model.UndertaleMap;
-import com.undertale.state.Context;
+
+import com.undertale.state.UseArmState;
+import com.undertale.state.UseContext;
+import com.undertale.state.UsePotionState;
+import com.undertale.strategy.GrabContext;
+import com.undertale.strategy.potionTakeStrategy;
 
 
 public class UseExecution implements Fecade {
-	UndertaleMap map;
-
+	
 	@Override
 	public void excute(Command command, UndertaleMap map) {
 		// TODO Auto-generated method stub
-		float hp = map.getCharactor().getHP();
-		float attack = map.getCharactor().getAttack();
-		float defense = map.getCharactor().getDefense();
-		
-		String itemtoUse = command.getSecondWord();
-		Inventory inventory = map.getCharactor().getMyInventory();
-		ArrayList<Item> items = inventory.getItems();
-		/*
-		
-		Context context = new Context();
-		UseArm useArm = new UseArm();
-		useArm.doAction(context);
-		
-		UsePotion usePotion = new UsePotion();
-		usePotion.doAction(context);
-		
-		
-		for(int i = 0;i < items.size(); i ++){
-			String item = items.get(i).getName();
-			if(itemtoUse.equalsIgnoreCase(item)) {
-				hp = hp + 10;
-				items.remove(i);
-				
-			}
+		if(command.getSecondWord().equals("POTION") ) {
+			UseContext useContext = new UseContext();
+			UsePotionState usePotionState = new UsePotionState();
+			usePotionState.doAction(useContext, map);
 		}
-		map.getCharactor().setHP(hp);
-		System.out.println("hp="+ hp);
-		*/
 		
-		
+		else if(command.getSecondWord().equals("ARM") ) {
+			UseContext useContext = new UseContext();
+			UseArmState usePotionState = new UseArmState();
+			usePotionState.doAction(useContext, map);
+		}
 	}
-	
-	
-
 }
