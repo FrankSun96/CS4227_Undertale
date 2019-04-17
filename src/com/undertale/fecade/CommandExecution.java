@@ -12,7 +12,7 @@ public class CommandExecution implements Execution{
 	private CheckExecution check;
 	private GrabExecution grab;
 	private AttackExecution attack;
-
+	private UseExecution use;
 	
 	
 	public CommandExecution() {
@@ -24,6 +24,7 @@ public class CommandExecution implements Execution{
 		check = new CheckExecution();
 		grab = new GrabExecution();
 		attack = new AttackExecution();
+		use = new UseExecution();
 	}
 	
 	public void execute(Command command, UndertaleMap map) {
@@ -44,6 +45,9 @@ public class CommandExecution implements Execution{
 			grab.excute(command, map);
 		} else if(firstword.equals("ATTACK")) {
 			attack.excute(command, map);
+		} else if(firstword.equals("USE")) {
+			use.excute(command, map);
+			
 		}
 
 	}
