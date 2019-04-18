@@ -35,11 +35,24 @@ public class Room implements Serializable{
 		this.itemList.add(item);
 	}
 	
+	public ArrayList<Item> getItem() {
+		return itemList;
+	}
+	
 	public boolean deleteItem(Item item) {
 		int itemId = item.getId();
 		for(Item it: itemList) {
 			if(it.getId() == itemId) {
 				itemList.remove(it);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean checkItem(int itemId) {
+		for(Item it: itemList) {
+			if(it.getId() == itemId) {
 				return true;
 			}
 		}

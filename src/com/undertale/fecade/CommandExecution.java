@@ -10,9 +10,9 @@ public class CommandExecution implements Execution{
 	private SaveExecution save;
 	private NewExecution newGame;
 	private CheckExecution check;
-	private TakeExecution take;
+	private GrabExecution grab;
 	private AttackExecution attack;
-
+	private UseExecution use;
 	
 	
 	public CommandExecution() {
@@ -22,8 +22,9 @@ public class CommandExecution implements Execution{
 		save = new SaveExecution();
 		newGame = new NewExecution();
 		check = new CheckExecution();
-		take = new TakeExecution();
+		grab = new GrabExecution();
 		attack = new AttackExecution();
+		use = new UseExecution();
 	}
 	
 	public void execute(Command command, UndertaleMap map) {
@@ -40,10 +41,13 @@ public class CommandExecution implements Execution{
 			save.excute(command, map);
 		} else if(firstword.equals("CHECK")) {
 			check.excute(command, map);
-		} else if(firstword.equals("TAKE")) {
-			take.excute(command, map);
+		} else if(firstword.equals("GRAB")) {
+			grab.excute(command, map);
 		} else if(firstword.equals("ATTACK")) {
 			attack.excute(command, map);
+		} else if(firstword.equals("USE")) {
+			use.excute(command, map);
+			
 		}
 
 	}
