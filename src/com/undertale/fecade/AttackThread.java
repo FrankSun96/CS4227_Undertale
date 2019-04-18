@@ -56,7 +56,7 @@ public class AttackThread extends Thread{
 			}
 			crit = critMethod();
 			if(ch_arm != 0 && crit == true) {
-				System.out.println("\n\nYes! You got a crit! Your damage will plus two in this round!\n\n");
+				System.out.println("\n\nYes! You got a crit! Your damage will +2 in this fighting round!\n\n");
 				ch_hp = ch_hp - damage;
 				hp = hp - ch_damage -2;
 			}else {
