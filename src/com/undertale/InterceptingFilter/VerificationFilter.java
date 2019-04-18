@@ -1,6 +1,7 @@
 package com.undertale.InterceptingFilter;
 
 import com.undertale.model.Command;
+import com.undertale.model.Room;
 import com.undertale.model.UndertaleMap;
 
 public class VerificationFilter implements Filter {
@@ -35,10 +36,14 @@ public class VerificationFilter implements Filter {
 			System.out.println("who do you wanna attack?");
 			return true;
 		} else if(firstword.equals("GRAB")) {
-			System.out.println("what do you wanna grab?");
-			
-			
-			return true;
+			Room currentRoom = map.getCurrentRoom();
+			if(currentRoom.getItem().size() == 0) {
+				System.out.println("There is no item in this room.");
+				return false;
+			}
+			else {
+				return true;
+			}
 		} else if(firstword.equals("CHECK")) {
 			return true;
 		} else if(firstword.equals("READ")) {
