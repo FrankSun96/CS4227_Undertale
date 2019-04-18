@@ -28,6 +28,7 @@ public class UseArmState implements State{
 		if(itemFound) {
 			System.out.println("Player is using arm...");
 			Arm arm = new Arm(2, "an [arm]", "this arm can add arm", 5);
+			//map.getCharactor().setArm(arm.getEffect());
 			map.getCharactor().setArm(arm.getEffect());
 			map.getCharactor().getMyInventory().deleteItem(arm);
 			System.out.println("Item used.");
