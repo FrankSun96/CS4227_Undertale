@@ -14,8 +14,9 @@ import com.undertale.interpreter.ExpressionParser;
 import com.undertale.model.Command;
 import com.undertale.model.Room;
 import com.undertale.model.UndertaleMap;
+import com.undertale.template.Game;
 
-public class UndertaleUtil {
+public class UndertaleUtil extends Game{
 	protected ExpressionParser expression;
 	protected VerificationFilter verification;
 	protected CommandExecution execution;
@@ -41,6 +42,8 @@ public class UndertaleUtil {
 	public void setGameBegin() {
 		this.expression = new ExpressionParser(true);
 	}
+	
+	@Override
 	public void welcome() {
 		System.out.println("\n" + 
 				" █    ██  ███▄    █ ▓█████▄ ▓█████  ██▀███  ▄▄▄█████▓ ▄▄▄       ██▓    ▓█████ \n" + 
@@ -56,6 +59,7 @@ public class UndertaleUtil {
 				"");
 	}
 	
+	@Override
 	public void initialMap() {
 		map.initialMap();
 	}
@@ -65,6 +69,7 @@ public class UndertaleUtil {
 		System.out.println("\n"+room.showDetailedDescription());
 	}
 	
+	@Override
 	public void executeCommand() {
 		while(!isFinish) {
 			Command command = expression.parse();
