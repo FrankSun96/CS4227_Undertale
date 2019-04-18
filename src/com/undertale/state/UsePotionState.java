@@ -26,13 +26,21 @@ public class UsePotionState implements State{
 		  }
           
 		  RedPotion potion = new RedPotion(1, "a red [potion]", "this red potion can add hp", 5);
-		  if(itemFound && hp!=100) {
+		  if(itemFound && hp <= 80) {
 		    	System.out.println("Player is using potion...");
 				hp += 20;
-				  map.getCharactor().setHP(hp);
-				  System.out.println("hp="+ hp);
-				  map.getCharactor().getMyInventory().deleteItem(potion);
-				  System.out.println("Item used.");
+			    map.getCharactor().setHP(hp);
+				System.out.println("hp="+ hp);
+				map.getCharactor().getMyInventory().deleteItem(potion);
+				System.out.println("Item used.");
+		  }
+		  else if(itemFound && (hp > 80 && hp < 100)) {
+			  System.out.println("Player is using potion...");
+			  hp = 100;
+			  map.getCharactor().setHP(hp);
+			  System.out.println("hp="+ hp);
+			  map.getCharactor().getMyInventory().deleteItem(potion);
+			  System.out.println("Item used.");
 		  }
 		  else if(!itemFound){
 				System.out.println("Failed! Item not found.");

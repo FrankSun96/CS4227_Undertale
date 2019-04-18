@@ -32,6 +32,6 @@ public class Inventory implements Serializable{
 	
 	public void deleteItem(Item item) {
 		int index = inventory.indexOf(item);
-		inventory.remove(index);
+		inventory.remove(index+1);
 	}
 }
