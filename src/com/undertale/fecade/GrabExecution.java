@@ -19,23 +19,38 @@ public class GrabExecution implements Fecade{
 	
 	@Override
 	public void excute(Command command, UndertaleMap map) {
+		
+		Room currentRoom = map.getCurrentRoom();
 		// TODO Auto-generated method stub
 		if(command.getSecondWord().equals("POTION") ) {
-			GrabContext grabContext = new GrabContext(new potionTakeStrategy());    
-			grabContext.executeStrategy(command, map);
-		}
-		else if(command.getSecondWord().equals("ARM")) {
-			GrabContext grabContext = new GrabContext(new armTakeStrategy());    
-			grabContext.executeStrategy(command, map);
-			System.out.println("ARM.");
-		}
-		else if(command.getSecondWord().equals("ARMOR")) {
-			GrabContext grabContext = new GrabContext(new armorTakeStrategy());    
-			grabContext.executeStrategy(command, map);
-			System.out.println("ARMOR.");
+			if(currentRoom.checkItem(1)) {
+				GrabContext grabContext = new GrabContext(new potionTakeStrategy());    
+				grabContext.executeStrategy(command, map);
+				System.out.println("(√) Grab successfully.");
+			}
+			else
+				System.out.println("There is no POTION in this room.");
 		}
 		
-		System.out.println("(√) Grab successfully.");
+		else if(command.getSecondWord().equals("ARM")) {
+			if(currentRoom.checkItem(2)) {
+				GrabContext grabContext = new GrabContext(new armTakeStrategy());    
+				grabContext.executeStrategy(command, map);
+				System.out.println("(√) Grab successfully.");
+			}
+			else
+				System.out.println("There is no ARM in this room.");
+		}
+		
+		else if(command.getSecondWord().equals("ARMOR")) {
+			if(currentRoom.checkItem(3)) {
+				GrabContext grabContext = new GrabContext(new armorTakeStrategy());    
+				grabContext.executeStrategy(command, map);
+				System.out.println("(√) Grab successfully.");
+			}
+			else
+				System.out.println("There is no ARMOR in this room.");
+		}
 		
 	}
 }

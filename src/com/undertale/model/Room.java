@@ -50,6 +50,15 @@ public class Room implements Serializable{
 		return false;
 	}
 	
+	public boolean checkItem(int itemId) {
+		for(Item it: itemList) {
+			if(it.getId() == itemId) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public void putCreature(Creature creature) {
 		this.creatureList.add(creature);
 	}
