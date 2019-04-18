@@ -22,7 +22,7 @@ public class VerificationFilter implements Filter {
 			if(room) {
 				return true;
 			} else {
-				System.out.println("Oops, there is a wall in front of me. Maybe I should try another side\n");
+				System.out.println("(x) Oops, there is a wall in front of me. Maybe I should try another side\n");
 				return false;
 			}
 		} else if(firstword.equals("USE")) {
@@ -33,12 +33,12 @@ public class VerificationFilter implements Filter {
 			
 			
 			//这里需要检查是否有可攻击的怪物，如果没有 false， 有的话返回true
-			System.out.println("who do you wanna attack?");
+			System.out.println("(?) who do you wanna attack?");
 			return true;
 		} else if(firstword.equals("GRAB")) {
 			Room currentRoom = map.getCurrentRoom();
 			if(currentRoom.getItem().size() == 0) {
-				System.out.println("There is no item in this room.");
+				System.out.println("(x) There is no item in this room.");
 				return false;
 			}
 			else {

@@ -29,7 +29,7 @@ public class GrabExecution implements Fecade{
 				System.out.println("(√) Grab successfully.");
 			}
 			else
-				System.out.println("There is no POTION in this room.");
+				System.out.println("(x) There is no POTION in this room.");
 		}
 		
 		else if(command.getSecondWord().equals("ARM")) {
@@ -39,7 +39,7 @@ public class GrabExecution implements Fecade{
 				System.out.println("(√) Grab successfully.");
 			}
 			else
-				System.out.println("There is no ARM in this room.");
+				System.out.println("(x) There is no ARM in this room.");
 		}
 		
 		else if(command.getSecondWord().equals("ARMOR")) {
@@ -49,7 +49,7 @@ public class GrabExecution implements Fecade{
 				System.out.println("(√) Grab successfully.");
 			}
 			else
-				System.out.println("There is no ARMOR in this room.");
+				System.out.println("(x) There is no ARMOR in this room.");
 		}
 		
 	}

@@ -42,8 +42,8 @@ public class UndertaleMap implements Serializable{
 		setRoomItem(c, i3);
 		
 		// initialize creatures in each room
-		Creature c1 = createCreature("a meow", "It is a normal creature.", 4, 20, 4);//armor hp arm
-		Creature c2 = createBoss("a boss", "It is a Boss! Be careful.", 8, 40, 8);
+		Creature c1 = createCreature("Goblin", "It is a normal creature.", 4, 20, 4);//armor hp arm
+		Creature c2 = createBoss("Boss", "It is a Boss! Be careful.", 8, 40, 8);
 		setRoomCreature(b, c1);
 		setRoomCreature(c, c2);
 		

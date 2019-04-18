@@ -112,8 +112,8 @@ public class Room implements Serializable{
 	}
 	
 	public String showDetailedDescription() {
-		String details = "############################################################################\n✧*｡٩(ˊᗜˋ*)و✧*。\n"
-				+ "You are in room " + this.name + "\n";
+		String details = "############################################################################"
+				+ "\nYou are in room " + this.name + "\n";
 		details += this.description + "\n";
 		details += itemsFormat();
 		details += creatureFormat();
@@ -121,23 +121,31 @@ public class Room implements Serializable{
 	}
 	
 	public String itemsFormat() {
-		String items = "";
-		for(Item it: itemList) {
-			String name = it.getName();
-			items += "● " + name + "\n";
+		if(itemList.isEmpty()) {
+			return "";
+		} else {	
+			String items = "(?) You find: \n";
+			for(Item it: itemList) {
+				String name = it.getName();
+				items += "● " + name + "\n";
+			}
+			return items;
 		}
-		return items;
 	}
 	
 	public String creatureFormat() {
-		String creature = "";
-		for(Creature ct: creatureList) {
-			String name = ct.getName();
-			String description = ct.getDescription();
-			creature += name + "\n";
-			creature += description + "\n\n";
+		if(creatureList.isEmpty()) {
+			return "";
+		} else {
+			String creature = "\n(!) There is: \n";
+			for(Creature ct: creatureList) {
+				String name = ct.getName();
+				String description = ct.getDescription();
+				creature += name + "\n";
+				creature += description + "\n";
+			}
+			return creature;
 		}
-		return creature;
 	}
 	
 	public ArrayList<Creature> getCreature(){
