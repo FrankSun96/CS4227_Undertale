@@ -30,6 +30,7 @@ public class AttackExecution implements Fecade {
 					System.exit(1);
 				}else {
 					System.out.println("congratz, you beat the creature! Now you have HP: " + hpAfterFight+ "\n What you want to do next? \n");
+					map.getCurrentRoom().deleteCreature(creatureList.get(i));
 				}
 			}
 			UndertaleUtil.setFinish(attackResult);
