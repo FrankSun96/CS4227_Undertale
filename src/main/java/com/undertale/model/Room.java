@@ -59,13 +59,12 @@ public class Room implements Serializable{
 	}
 	
 	public boolean checkItem(int itemId) {
-		Item find = itemList
+		Optional<Item> find = itemList
 				.stream()
 				.filter(it -> it.getId() == itemId)
-				.findFirst()
-				.get();
-	
-		if(find == null) {
+				.findFirst();
+		
+		if(find.isEmpty()) {
 			return false;
 		} else {
 			return true;
