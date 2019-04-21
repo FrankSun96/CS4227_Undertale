@@ -2,7 +2,6 @@ package com.undertale.model.memento;
 
 import java.io.Serializable;
 
-import com.undertale.UndertaleUtil;
 import com.undertale.model.UndertaleMap;
 
 public class GameMemento implements Serializable{

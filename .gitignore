@@ -90,3 +90,5 @@ buildNumber.properties
 .classpath
 .settings
 .metadata
+
+logger.txt

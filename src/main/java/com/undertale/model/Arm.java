@@ -1,7 +1,10 @@
 package com.undertale.model;
+import java.io.Serializable;
+
 import com.undertale.model.Item;
 
-public class Arm extends Item {
+public class Arm extends Item  implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private float effect;
 
 	public Arm(int id, String name, String description, float effect) {

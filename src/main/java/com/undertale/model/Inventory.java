@@ -16,7 +16,7 @@ public class Inventory implements Serializable{
 	}
 	
 	public void addItem(Item item) {
-		if(currentCount < 5) {
+		if(currentCount < maximunCount) {
 			inventory.add(item);
 			currentCount++;
 		}

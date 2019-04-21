@@ -5,11 +5,6 @@ import com.undertale.model.Room;
 import com.undertale.model.UndertaleMap;
 
 public class VerificationFilter implements Filter {
-	private UndertaleMap map;
-	
-	public VerificationFilter() {
-		this.map = new UndertaleMap();
-	}
 
 	public boolean execute(Command command, UndertaleMap map) {
 		String firstword = command.getfirstWord();

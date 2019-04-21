@@ -1,6 +1,9 @@
 package com.undertale.model;
 
-public class Creep extends Creature {
+import java.io.Serializable;
+
+public class Creep extends Creature  implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private float armor;
 	private float HP;
 	private float damage;

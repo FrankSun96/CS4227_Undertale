@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import com.undertale.model.Arm;
 import com.undertale.model.Inventory;
 import com.undertale.model.Item;
-import com.undertale.model.Room;
 import com.undertale.model.UndertaleMap;
 
 public class UseArmState implements State{
