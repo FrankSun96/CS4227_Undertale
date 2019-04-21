@@ -1,8 +1,6 @@
 package com.undertale.adapter;
 
 import com.undertale.UndertaleUtil;
-import com.undertale.model.memento.GameMemento;
-import com.undertale.model.memento.GameMementoManager;
 
 public class UndertaleUtilWithArchive extends UndertaleUtil implements Archive {
 

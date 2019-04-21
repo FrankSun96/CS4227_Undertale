@@ -1,11 +1,5 @@
 package com.undertale.fecade.attackimage;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 public class Image {
     public static void getBossFight() {
     	System.out.println("                                               rSX.                    iSXi                                                                                     \r\n" + 
