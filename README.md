@@ -2,21 +2,21 @@
 
 # Used Design Pattern
 
-## Interceptor 
-## Adapter
-## Chain Of Resiponsibility
-## Facade
-## Intercepting Filter
-## Intepreter
-## Abstract Factory
-## Strategy 
-## Memento
-## State
-## Template 
+* Interceptor 
+* Adapter
+* Chain Of Resiponsibility
+* Facade
+* Intercepting Filter
+* Intepreter
+* Abstract Factory
+* Strategy 
+* Memento
+* State
+* Template 
 
 
 # Added Value
 
-## Thread
-## Maven
-## labmda function
+* Thread
+* Maven
+* labmda function
