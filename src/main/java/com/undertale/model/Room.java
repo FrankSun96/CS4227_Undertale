@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.Predicate;
+
 import com.undertale.model.Item;
 
 public class Room implements Serializable{
@@ -41,22 +44,32 @@ public class Room implements Serializable{
 	
 	public boolean deleteItem(Item item) {
 		int itemId = item.getId();
-		for(Item it: itemList) {
-			if(it.getId() == itemId) {
-				itemList.remove(it);
-				return true;
-			}
+		Item find = itemList
+					.stream()
+					.filter(it -> it.getId() == itemId)
+					.findFirst()
+					.get();
+		
+		if(find == null) {
+			return false;
+		} else {
+			itemList.remove(find);
+			return true;
 		}
-		return false;
 	}
 	
 	public boolean checkItem(int itemId) {
-		for(Item it: itemList) {
-			if(it.getId() == itemId) {
-				return true;
-			}
+		Item find = itemList
+				.stream()
+				.filter(it -> it.getId() == itemId)
+				.findFirst()
+				.get();
+	
+		if(find == null) {
+			return false;
+		} else {
+			return true;
 		}
-		return false;
 	}
 	
 	public void putCreature(Creature creature) {
@@ -65,13 +78,18 @@ public class Room implements Serializable{
 	
 	public boolean deleteCreature(Creature creature) {
 		int creatureId = creature.getId();
-		for(Creature ct: creatureList) {
-			if(ct.getId() == creatureId) {
-				creatureList.remove(ct);
-				return true;
-			}
+		Creature find = creatureList
+				.stream()
+				.filter(ct -> ct.getId() == creatureId)
+				.findFirst()
+				.get();
+	
+		if(find == null) {
+			return false;
+		} else {
+			creatureList.remove(find);
+			return true;
 		}
-		return false;
 	}
 	
 	public void setExits(Room north, Room south, Room west, Room east) {
