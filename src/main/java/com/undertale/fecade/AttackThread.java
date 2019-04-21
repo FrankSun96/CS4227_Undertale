@@ -47,8 +47,9 @@ public class AttackThread extends Thread{
 			try {
 				Thread.currentThread().sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} finally {
+				
 			}
 			crit = critMethod();
 			if(ch_arm != 0 && crit == true) {
@@ -74,10 +75,10 @@ public class AttackThread extends Thread{
 			try {
 				Thread.currentThread().sleep(1000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} finally {
+				
 			}
-			//Thread.sleep(1000);
 		}
 		
 	}

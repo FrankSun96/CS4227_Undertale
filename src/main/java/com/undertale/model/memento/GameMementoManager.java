@@ -24,6 +24,8 @@ public class GameMementoManager {
 	        fileStream.close();
 	        GAME_ARCHIVE.push(memo);
 		} catch (Exception e) {
+		} finally {
+			
 		}
 	}
 
@@ -32,6 +34,8 @@ public class GameMementoManager {
 			return GAME_ARCHIVE.pop();
 		} catch(Exception ex) {
 			return null;
+		} finally {
+			
 		}
 	}
 	
@@ -48,7 +52,9 @@ public class GameMementoManager {
 			return true;
 		} catch (Exception e) {
 			return false;
-		}  
+		}  finally {
+			
+		}
 	}
 
 }

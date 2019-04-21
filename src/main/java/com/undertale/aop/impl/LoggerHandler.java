@@ -26,6 +26,8 @@ public class LoggerHandler extends AfterHandler {
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+        	
         }
 	}
 }

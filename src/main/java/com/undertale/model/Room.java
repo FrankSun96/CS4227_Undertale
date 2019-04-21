@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 import com.undertale.model.Item;
 
@@ -44,17 +43,16 @@ public class Room implements Serializable{
 	
 	public boolean deleteItem(Item item) {
 		int itemId = item.getId();
-		Item find = itemList
+		Optional<Item> find = itemList
 					.stream()
 					.filter(it -> it.getId() == itemId)
-					.findFirst()
-					.get();
-		
-		if(find == null) {
-			return false;
-		} else {
-			itemList.remove(find);
+					.findFirst();
+		if(find.isPresent()) {
+			Item findItem = find.get();
+			itemList.remove(findItem);
 			return true;
+		} else {
+			return false;
 		}
 	}
 	
@@ -63,11 +61,10 @@ public class Room implements Serializable{
 				.stream()
 				.filter(it -> it.getId() == itemId)
 				.findFirst();
-		
-		if(find.isEmpty()) {
-			return false;
-		} else {
+		if(find.isPresent()) {
 			return true;
+		} else {
+			return false;
 		}
 	}
 	
@@ -77,17 +74,16 @@ public class Room implements Serializable{
 	
 	public boolean deleteCreature(Creature creature) {
 		int creatureId = creature.getId();
-		Creature find = creatureList
+		Optional<Creature> find = creatureList
 				.stream()
 				.filter(ct -> ct.getId() == creatureId)
-				.findFirst()
-				.get();
-	
-		if(find == null) {
-			return false;
-		} else {
-			creatureList.remove(find);
+				.findFirst();
+		if(find.isPresent()) {
+			Creature findCreature = find.get();
+			creatureList.remove(findCreature);
 			return true;
+		} else {
+			return false;
 		}
 	}
 	
