@@ -48,8 +48,6 @@ public class AttackThread extends Thread{
 				Thread.currentThread().sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			} finally {
-				
 			}
 			crit = critMethod();
 			if(ch_arm != 0 && crit == true) {
@@ -76,8 +74,6 @@ public class AttackThread extends Thread{
 				Thread.currentThread().sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
-			} finally {
-				
 			}
 		}
 		
@@ -91,47 +87,5 @@ public class AttackThread extends Thread{
 		}
 		return crit;
 	}
-	
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*public class AttackThread extends Thread implements Callable {
-	private String result;
-	Creature cr;
-	Character ch;
-	public AttackThread(Creature crea, Character chara) {
-		this.cr = crea;
-		this.ch = chara;
-	}
-	
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		try {
-			Thread.sleep(1000);
-			System.out.println("\n***************************************");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	@Override
-	public Object call() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-}*/

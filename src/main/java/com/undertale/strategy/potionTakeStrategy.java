@@ -18,7 +18,5 @@ public class potionTakeStrategy implements Strategy {
 			map.getCharactor().getMyInventory().addItem(potion);
 			currentRoom.deleteItem(potion);
 		}
-		
 	}
-
 }
