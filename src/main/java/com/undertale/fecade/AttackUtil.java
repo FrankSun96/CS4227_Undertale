@@ -4,6 +4,7 @@ package com.undertale.fecade;
 import com.undertale.chainofresponsibility.BossAttackConcreteHandler;
 import com.undertale.chainofresponsibility.CreepAttackConcreteHandler;
 import com.undertale.chainofresponsibility.Handler;
+import com.undertale.fecade.attackimage.Image;
 import com.undertale.model.Boss;
 import com.undertale.model.Charactor;
 import com.undertale.model.Creature;
@@ -31,6 +32,11 @@ public class AttackUtil {
 		
 		creepHandler.handleAttackRequest(ch,cr);
 		result  = ch.getHP();
+		if(cr instanceof Boss && result > 0) {
+			Image.getBossLoss();
+			Image.getWin();
+			System.exit(1);
+		}
 		return result;
 	}
 	

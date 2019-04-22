@@ -3,6 +3,7 @@ package com.undertale.fecade;
 import java.util.ArrayList;
 
 import com.undertale.UndertaleUtil;
+import com.undertale.fecade.attackimage.Image;
 import com.undertale.model.Charactor;
 import com.undertale.model.Command;
 import com.undertale.model.Creature;
@@ -20,7 +21,8 @@ public class AttackExecution implements Fecade {
 				hpAfterFight = AttackUtil.Attack(creatureList.get(i),ch);
 				if(hpAfterFight <= 0) {
 					attackResult = true;//fail
-					System.out.println("You died.");
+					Image.getGameOver();
+					System.out.println("\n\n\n                                      You died.                                      ");
 					System.exit(1);
 				}else {
 					System.out.println("congratz, you beat the creature! Now you have HP: " + hpAfterFight+ "\n What you want to do next? \n");
