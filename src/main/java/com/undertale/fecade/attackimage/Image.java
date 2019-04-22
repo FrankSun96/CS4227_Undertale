@@ -228,11 +228,42 @@ public class Image {
     			"                                                                                                                                                      ");
     }
     
-    public static void main (String args[]) {
-    	getBossFight();
-    	getBoss();
-    	getBossLoss();
-    	getGameOver();
+    public static void getWin() {
+    	System.out.println("    sDBQQ2.                      :5gBQRXr                       JgBQRu            .1MQBgu               sZBQQX:                             :qQQBPr   \r\n" + 
+    			"  YBBQgRMBQS                   igBQQggMBBQ7                   iBBQgMRBB2         PBBRMgQBBS           XBBQgMMBQg:                          gBBMMgBBQ: \r\n" + 
+    			" MBBBQQRQQBBQ                 BQBBQQQRQQBQBB.                EBBBQQRQQBBB      :BBBQQRQQBBBQ.       EQBQBQQRQQBBBB                       iBQBQQQQQBBB:\r\n" + 
+    			"BBBBQQRQRQQBBi               BBBQQRQRQRQQQQBB               .BBBRQRQQQQBBd     BQBQQRQRQQQBBB      JBBQQRQRQMQQBBBB.                     BBBRQMQMQQBBQ\r\n" + 
+    			"BBBRQRQRQMQQBB              JBBQQMQMQMQMQRQQBU              QBBRQMQRQMQQBq     BBRQMQRQMQRQBB      BBQQMQRQRQMQMQQBBr                    BBQQRQRQRQRBg\r\n" + 
+    			" BBQRQRQRQRQBB.             BBQQRQRQRQRQMQRQBB              BBQQMQMQRQQBB:     BBQMQRQMQRQRBB      BBQMQMQRQRQMQRQQBBv                   BBQMQRQMQRQQg\r\n" + 
+    			" vBQQRQMQMQMBBS            vBQQMQRQRQRQRQMQRBB1            7BBQRQRQMQRQBB      BBRQRQMQMQRQBB      QBRQRQMQRQRQMQMQQBB2                  BBQQMQRQRQRQD\r\n" + 
+    			"  BBRQRQRQRQQBB            BBQRQRQRQRQRQRQRQQBB            BBQMQMQMQMQQBU      BQQMQRQMQRQQBB      BQQMQRQRQRQRQMQRQQBBb                 BBQRQMQRQMQRg\r\n" + 
+    			"  BBBMQMQMQMQBB.          :BBRQMQRQRQRQRQMQMQQBi           BBRQRQRQMQRBB       BBRQMQMQMQRQBB      BBRQMQMQMQMQRQMQRQQBBR                BBRQMQMQRQQQD\r\n" + 
+    			"  iBBQRQRQRQMBBP          gBQQMQMQRQQBRQRQMQRQBB          sBQQMQRQRQRBBM       BBQMQMQRQRQQBQ      BBQRQMQMQRQMQRQMQMQRBBB               BBQMQMQMQRQRg\r\n" + 
+    			"   BBQQRQRQMQRBB          BBQMQMQMQQBBBQQMQMQQBQ.         BBQMQMQMQRQBB.       BBRQRQMQRQRQQB      BBQQMQRQMQMQMQRQRQRQRBBB              BBQQRQMQMQQQD\r\n" + 
+    			"   IBBRQMQMQRQBB:        IBBQQMQMQQBS7BQRQMQMQQBP        .BBRQRQMQRQQBB        BQQMQMQMQMQRBB      BQQRQMQRQRQRQQQRQRQMQQBBB             BBQMQMQRQMQRg\r\n" + 
+    			"    BBQMQMQRQRQQD        BBRQRQMQQBB. BBQMQMQRQBB        2BQQMQMQMQQBB7        BBRQMQMQMQRQBB      BBQQMQRQMQMQQBBQQQRQMQQBBB.           BBRQMQRQMQRQD\r\n" + 
+    			"    MBQQRQRQRQQBQ       rBQQRQMQMQBB  ZBQQMQRQRBBs       BBQRQRQRQRQBB         BBQRQRQRQRQQBQ      BQQRQMQRQMQRBvKBBQQMQRQQBBB:          BBQRQMQMQRQRg\r\n" + 
+    			"    :BBQQMQRQMQQBi      BBBRQMQRQQBL  .BBRQMQRQQBB      .QBQQRQRQMQQBX         BBRQRQRQRQRQBB      BBRQMQRQRQRQBi MBBQQMQRQRBBBr         QBRQRQMQMQRQD\r\n" + 
+    			"     BBBRQRQMQRQBQ     .BBRQRQRQRBB    BBBRQRQRQQB:     qBQQRQMQMQRBB          BBQRQRQMQRQRBB      BBQRQMQRQRQQBv  DBBQQRQRQRBBBL        BBQRQMQMQRQQg\r\n" + 
+    			"     YBQQRQRQMQRBB     dBQQMQMQMBBP    rBQQMQMQMQBQ     BBQMQMQRQMBBQ          QBRQMQRQRQRQBB      BBQQMQMQRQMQQj   PBBQQRQRQRQBBU       BBRQRQMQRQQQD\r\n" + 
+    			"      QBRQMQRQRQQB7    BBQRQMQRQBB      BBQQMQMQQBB    :BBRQRQRQMQBB:          BBQRQMQMQRQRBB      BBQRQMQRQMQQBs    UBBQQMQMQRBBBP      BBQMQMQRQRQRg\r\n" + 
+    			"      DBBRQRQRQMBBB   sBBRQMQMQQBQ      5BBMQMQRQQBX   ZBQQRQMQMQQBB           BBRQMQRQMQMQBB      BBQQMQMQMQRBBj     YBBQQMQRQRQBBM     BBQQMQRQRQRQD\r\n" + 
+    			"      .BBQRQMQRQRBQ   BBQQRQMQRBB:       BBQRQRQMQBB   BBQMQRQMQRBBs           BBQRQRQMQRQRBQ      BBQRQMQMQRQQBs      rBBQQRQRQRQBBQ    BBQMQRQRQMQQg\r\n" + 
+    			"       BBQQRQRQMQQBv .BBQMQRQRQQB        gBQQRQRQRBBr iBBRQMQRQRQBB            BBQQRQRQRQRQBB      BBRQRQMQRQRQBj       iBBQQMQRQMQBBB   BBRQMQRQRQRQD\r\n" + 
+    			"       7QBRQMQMQMQBB EBQRQMQRQQB7        .BBQQMQMQQBQ qBQQMQMQMQQBb            BBQMQRQMQRQRBB      BBQRQRQMQMQQBs        .BBQQRQMQRQQBB  BBQRQRQRQRQRg\r\n" + 
+    			"        BBQMQRQMQRBB:BBQQMQMQQBB          BQBMQRQRQQB:BBQRQRQRQQBB.            BBQQRQMQMQRQBB      BBQQRQMQRQRQQu         .BBQQRQRQRQQBB.QBRQMQRQRQRQD\r\n" + 
+    			"        qBQQRQRQRQQBBBRQMQRQRBBK          rBQQMQMQRQBBQQMQMQMQRBBB             BBQMQRQMQMQQBB      BBQRQMQMQRQQBJ           BBBQRQMQMQQBBBQQMQMQRQRQRg\r\n" + 
+    			"        .QBQQMQMQRQRBRQMQRQMQBB            BBQQMQMQRQQQRQMQRQRQBBi             QBRQRQMQMQMQBB      BBQQMQRQMQRQBj            QBBQRQMQRQRBRQMQMQMQMQRQD\r\n" + 
+    			"         BBQMQMQMQMQRQRQRQRQQBg            SBBRQMQMQMQRQMQMQRQQBB              BQQRQRQMQRQRBB      BBQRQRQRQRQQBs             BBBQRQMQMQMQMQMQRQRQRQQg\r\n" + 
+    			"         iBQQRQRQRQMQRQMQMQRBB:             BBQRQRQRQRQRQRQRQMBB2              BBQQRQMQMQRQQB      BBQQMQMQRQRQBu              QBBQRQMQMQMQMQRQMQMQRQD\r\n" + 
+    			"          BBRQRQMQRQMQRQRQRQBB              gBQQMQMQMQMQRQRQRQBB               BBQMQMQMQRQRBB      BBQMQRQMQRQQBJ               EBBQRQMQMQRQMQRQRQMQQg\r\n" + 
+    			"          XBBRQMQMQRQRQMQRQBBr              :BBRQMQMQRQMQRQRQQBg               BBRQMQRQMQMQBB      BBRQMQRQRQMBBu                KBQQRQMQMQRQRQRQRQRQD\r\n" + 
+    			"           BBQMQRQMQRQRQMQQBB                BBQRQMQMQMQMQMQRBB.               BBQMQMQMQMQRBQ      BBQRQMQMQMQQBJ                 1BBQRQMQMQMQMQRQRQQg\r\n" + 
+    			"           EBQQRQRQMQRQMQQBBj                iBBQRQMQRQRQRQRQBB                BBRQMQRQRQRQBB      BBQQRQMQMQMBBu                  vBBBQQMQMQMQMQMQRQg\r\n" + 
+    			"           .BBQQMQMQMQMQQBBB                  BBQQMQMQRQRQRQBBi                BBQMQRQMQMQQBB      BBBRQRQRQMQQBu                   rBBBQQRQRQRQRQMQQR\r\n" + 
+    			"            dBBQQRQRQMQQBBBr                  :QBBQRQMQRQQQBBB                 BBQQQQRQRQQBBB      RBQQMQMQRQQBQ:                    .BBBQQRQRQRQQQBBb\r\n" + 
+    			"             BQBQQQQRQQBBBj                    vBBBBQQRQQBBBB                  .BBQBRQRQQBBB.       BBBQRQRQQBBD                       ZBBQBQQRQRQQBQ \r\n" + 
+    			"              .2ggMgggMdY                        7EgMgMgMDq.                     7ZgRgMgMb7          7DgMgMMgX.                          rbZMggDRgEL  ");
     }
     
 }
